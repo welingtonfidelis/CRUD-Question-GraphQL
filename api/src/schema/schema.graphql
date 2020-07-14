@@ -1,0 +1,19 @@
+type Question {
+    id: ID
+    question: String
+    options: [String]
+    answerID: String
+}
+
+#rota para retornos de informações
+type Query {
+    questions: [Question]
+    question(id: ID): Question
+}
+
+# rota para alteração de informações
+type Mutation {
+    createQuestion(question: String, options: [String], answerID: String): Question
+    updateQuestion(id: ID,question: String, options: [String], answerID: String): Question
+    deleteQuestion(id: ID): Question
+}
